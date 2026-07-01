@@ -1,18 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fran's Flowers | Boutique Flower Shop in San Francisco</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header>
       <div class="header-content">
         <h1><span class="accent">Fran's</span> Flowers</h1>
         <p class="tagline">Brightening San Francisco since 1995</p>
       </div>
+      <nav aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About Fran</a>
+      </nav>
     </header>
 
     <div id="hero-container">
@@ -23,7 +36,7 @@
       />
     </div>
 
-    <main>
+    <main id="main-content">
       <section class="about-us">
         <h2><span class="accent">About</span> Us</h2>
         <p>
@@ -63,6 +76,20 @@
         </div>
       </section>
 
+      <section class="seasonal-pick">
+        <h2><span class="accent">Seasonal</span> Pick</h2>
+        <img
+          src="img/sunflowers.png"
+          alt="A bright bouquet of sunflowers and seasonal blooms"
+        />
+        <h3>Golden Summer Bouquet</h3>
+        <p>
+          This cheerful arrangement of sunflowers, daisies, and seasonal blooms
+          is perfect for celebrating summer birthdays, anniversaries, or just
+          because!
+        </p>
+      </section>
+
       <section class="visit-us">
         <h2><span class="accent">Visit</span> Us</h2>
         <div class="contact-info">
@@ -76,6 +103,7 @@
         </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.144965296929!2d-122.4230293!3d37.7689366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3a37128e21%3A0xf85bfc7fef295b98!2s123%20Valencia%20St%2C%20San%20Francisco%2C%20CA%2094103!5e0!3m2!1sen!2sus!4v1722345678901!5m2!1sen!2sus"
+          title="Google Maps location of Fran's Flowers at 123 Valencia Street"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>

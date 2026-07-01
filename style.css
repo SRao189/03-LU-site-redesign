@@ -1,33 +1,226 @@
-/* Base Styles */
-body {
-  color: royalblue;
+/* LevelUp Upgrades */
+
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+nav a[aria-current="page"] {
+  border-bottom: 2px solid #c1666b;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #c1666b;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.seasonal-pick {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 0 20px;
   text-align: center;
-  background-color: bisque;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.seasonal-pick img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Base Styles */
+
+body {
+  color: #3f342d;
+  background-color: #faf6f0;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.accent {
+  color: #c1666b;
 }
 
 /* Typography */
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
 /* Links & Accents */
+
+a {
+  color: #a74c4f;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+header {
+  padding: 24px 20px 8px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+nav a {
+  font-weight: 700;
+}
 
 /* Images */
 
 /* Hero Section */
 
+#hero-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 50%;
+}
+
 /* Main Content */
+
+main {
+  padding: 0 20px 40px;
+}
 
 /* About Section */
 
+.about-us {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+}
+
 /* Specials Section */
+
+.special-offer img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.specials-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.special-offer {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 220px;
+}
+
+.special-offer h3 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.price-now {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #b5502f;
+}
+
+.price-was {
+  font-size: 0.9em;
+  color: #595959;
+  text-decoration: line-through;
+}
+
+.specials {
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Seasonal Pick Section */
+
+.seasonal-pick {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.seasonal-pick img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
 
 /* Visit Us Section */
 
 iframe {
   width: 100%;
   height: 350px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 16px;
 }
 
 /* Footer */
 footer {
   margin-top: 48px;
+}
+
+.visit-us {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.contact-info {
+  margin-bottom: 24px;
+  line-height: 1.8;
 }
