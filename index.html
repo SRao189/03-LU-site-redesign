@@ -3,119 +3,137 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src https://www.google.com; upgrade-insecure-requests" />
-    <title>Fran's Flowers | Boutique Flower Shop in San Francisco</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src https://www.google.com; upgrade-insecure-requests" />
+    <meta name="description" content="Fran's Flowers: a neighborhood flower shop on Valencia Street in San Francisco's Mission District since 1995. This week's specials, the seasonal pick, and directions." />
+    <meta name="theme-color" content="#d24a6c" />
+    <title>Fran's Flowers · Valencia Street, San Francisco</title>
+    <link rel="preload" href="assets/fonts/shrikhand-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
-      <div class="header-content">
-        <h1><span class="accent">Fran's</span> Flowers</h1>
-        <p class="tagline">Brightening San Francisco since 1995</p>
-      </div>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="Fran's Flowers home">Fran's Flowers</a>
       <nav aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About Fran</a>
+        <a href="#visit">Visit</a>
       </nav>
     </header>
 
-    <div id="hero-container">
-      <img
-        src="img/fran.png"
-        alt="Francine Miller, owner of Fran's Flowers"
-        class="hero-img"
-      />
-    </div>
-
     <main id="main-content">
-      <section class="about-us">
-        <h2><span class="accent">About</span> Us</h2>
-        <p>
-          Fran's Flowers was founded in 1995 by Francine Miller to share joy,
-          beauty, and connection with the Mission District of San Francisco.
-          Thirty years later we remain rooted in that vision, brightening lives
-          with every bouquet while supporting our community. Ten percent of each
-          sale continues to fund efforts to fight homelessness across the Bay
-          Area.
-        </p>
-        <p>Thank you for helping us grow kindness one flower at a time.</p>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+          <h1 id="hero-title">Flowers for the Mission, <span class="nowrap">since 1995.</span></h1>
+          <p class="hero-lead">
+            Fran Miller opened this shop on Valencia Street to share joy, beauty,
+            and connection with her neighborhood. Thirty years on, every bouquet
+            still leaves here hand-tied.
+          </p>
+          <p class="hero-actions">
+            <a class="button" href="#specials">This week's specials</a>
+            <a class="text-link" href="#visit">How to find us</a>
+          </p>
+        </div>
+        <figure class="hero-photo">
+          <picture>
+            <img src="img/fran.webp" width="1000" height="667" alt="Fran Miller kneeling with a potted pink geranium in front of the shop's pink wall, surrounded by pots of marigolds and poppies" fetchpriority="high" />
+          </picture>
+        </figure>
       </section>
 
-      <section class="specials">
-        <h2><span class="accent">Weekly</span> Specials</h2>
-        <div class="specials-list">
-          <article class="special-offer">
-            <img src="img/potted_plant.png" alt="Ceramic Potted Herbs" />
-            <h3>Ceramic Potted Herbs</h3>
-            <p class="price-now">$7.99</p>
-            <p class="price-was">Was $17.99</p>
-          </article>
+      <section class="pledge" aria-label="Our pledge">
+        <p>
+          <strong>Ten percent of every sale</strong> goes to the fight against
+          homelessness across the Bay Area. Thank you for helping us grow
+          kindness, one flower at a time.
+        </p>
+      </section>
 
-          <article class="special-offer">
-            <img src="img/wild_flowers.png" alt="Wildflower Explosion" />
+      <section class="specials" id="specials" aria-labelledby="specials-title">
+        <div class="section-head">
+          <h2 id="specials-title">This week in the window</h2>
+          <p>Three specials, marked down while they last.</p>
+        </div>
+
+        <ul class="shelf" role="list">
+          <li class="item">
+            <img src="img/potted_plant.webp" width="400" height="400" alt="A parlor palm in a white ceramic pot" loading="lazy" />
+            <h3>Potted Parlor Palm</h3>
+            <p class="tag">
+              <span class="tag-now"><span class="visually-hidden">Now </span>$7.99</span>
+              <span class="tag-was"><span class="visually-hidden">, was </span><s>$17.99</s></span>
+            </p>
+          </li>
+          <li class="item">
+            <img src="img/wild_flowers.webp" width="400" height="400" alt="Red, purple, and yellow wildflowers in a glass jar" loading="lazy" />
             <h3>Wildflower Explosion</h3>
-            <p class="price-now">$19.99</p>
-            <p class="price-was">Was $29.99</p>
-          </article>
-
-          <article class="special-offer">
-            <img src="img/sunflowers.png" alt="Sunflower Delight" />
+            <p class="tag">
+              <span class="tag-now"><span class="visually-hidden">Now </span>$19.99</span>
+              <span class="tag-was"><span class="visually-hidden">, was </span><s>$29.99</s></span>
+            </p>
+          </li>
+          <li class="item">
+            <img src="img/sunflowers.webp" width="400" height="400" alt="A dozen sunflowers in a painted tin pitcher" loading="lazy" />
             <h3>Sunflower Delight</h3>
-            <p class="price-now">$12.99</p>
-            <p class="price-was">Was $19.99</p>
-          </article>
+            <p class="tag">
+              <span class="tag-now"><span class="visually-hidden">Now </span>$12.99</span>
+              <span class="tag-was"><span class="visually-hidden">, was </span><s>$19.99</s></span>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="seasonal" aria-labelledby="seasonal-title">
+        <img class="seasonal-photo" src="img/sunflowers.webp" width="400" height="400" alt="" loading="lazy" />
+        <div class="seasonal-text">
+          <h2 id="seasonal-title">Seasonal pick: the Golden Bouquet</h2>
+          <p>
+            Sunflowers, daisies, and whatever is blooming best that week, gathered
+            into one cheerful armful. Made for birthdays, anniversaries, or just
+            because.
+          </p>
         </div>
       </section>
 
-      <section class="seasonal-pick">
-        <h2><span class="accent">Seasonal</span> Pick</h2>
-        <img
-          src="img/sunflowers.png"
-          alt="A bright bouquet of sunflowers and seasonal blooms"
-        />
-        <h3>Golden Summer Bouquet</h3>
-        <p>
-          This cheerful arrangement of sunflowers, daisies, and seasonal blooms
-          is perfect for celebrating summer birthdays, anniversaries, or just
-          because!
-        </p>
-      </section>
-
-      <section class="visit-us">
-        <h2><span class="accent">Visit</span> Us</h2>
-        <div class="contact-info">
-          <p>Come in and say hi!</p>
-          <div class="address-block">
-            <address>123 Valencia Street, San Francisco, CA 94103</address>
-          </div>
-          <div class="phone-block">
-            <p>Call us at <a href="tel:+1234567890">123-456-7890</a></p>
-          </div>
+      <section class="visit" id="visit" aria-labelledby="visit-title">
+        <div class="visit-text">
+          <h2 id="visit-title">Come in and say hi</h2>
+          <address>
+            <span class="visit-line">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+              123 Valencia Street<br />San Francisco, CA 94103
+            </span>
+            <span class="visit-line">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3.5h3l1.5 4.2-2 1.3a11 11 0 0 0 5.9 5.9l1.3-2 4.2 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" /></svg>
+              <a href="tel:+11234567890">123-456-7890</a>
+            </span>
+          </address>
+          <p>
+            <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=123+Valencia+St,+San+Francisco,+CA+94103" rel="noopener">Open in Google Maps</a>
+          </p>
         </div>
         <iframe
+          class="map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.144965296929!2d-122.4230293!3d37.7689366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3a37128e21%3A0xf85bfc7fef295b98!2s123%20Valencia%20St%2C%20San%20Francisco%2C%20CA%2094103!5e0!3m2!1sen!2sus!4v1722345678901!5m2!1sen!2sus"
-          title="Google Maps location of Fran's Flowers at 123 Valencia Street"
+          title="Map of 123 Valencia Street, San Francisco"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2025 Fran's Flowers LLC.</p>
-        <p>Brightening lives one flower at a time</p>
-      </div>
+    <footer class="site-footer">
+      <p class="footer-mark">Fran's Flowers</p>
+      <p>Brightening the Mission one flower at a time.</p>
+      <p class="footer-note">
+        Fran's Flowers is a fictional shop from a web-design course brief. Redesign by Sahar Rao;
+        the graded original is kept at the
+        <a href="https://github.com/SRao189/03-LU-site-redesign/tree/submitted-original">submitted-original tag</a>.
+      </p>
     </footer>
   </body>
 </html>

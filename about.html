@@ -3,75 +3,77 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src https://www.google.com; upgrade-insecure-requests" />
-    <title>About Fran | Fran's Flowers</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; upgrade-insecure-requests" />
+    <meta name="description" content="Fran Miller grew up in the Mission District and opened Fran's Flowers on Valencia Street in 1995." />
+    <meta name="theme-color" content="#d24a6c" />
+    <title>About Fran · Fran's Flowers</title>
+    <link rel="preload" href="assets/fonts/shrikhand-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
-      <div class="header-content">
-        <h1><span class="accent">Fran's</span> Flowers</h1>
-        <p class="tagline">Brightening San Francisco since 1995</p>
-      </div>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="Fran's Flowers home">Fran's Flowers</a>
       <nav aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="about.html" aria-current="page">About Fran</a>
+        <a href="index.html#visit">Visit</a>
       </nav>
     </header>
 
-    <div id="hero-container">
-      <img
-        src="img/fran.png"
-        alt="Fran Miller smiling beside a bouquet of flowers"
-        class="hero-img"
-      />
-    </div>
-
     <main id="main-content">
-      <section class="about-us">
-        <h2><span class="accent">About</span> Fran</h2>
-        <p>
-          Fran Miller grew up in the Mission District and learned early that a
-          beautiful arrangement can carry comfort, celebration, and hope in a
-          single moment.
-        </p>
-        <p>
-          She opened Fran's Flowers in 1995 to create a warm neighborhood shop
-          where people could find thoughtful blooms for birthdays,
-          anniversaries, and everyday moments of joy.
-        </p>
+      <section class="story-hero" aria-labelledby="story-title">
+        <h1 id="story-title">Fran grew up in the Mission. So did the shop.</h1>
+        <img src="img/fran.webp" width="1000" height="667" alt="Fran Miller smiling in gardening gloves, holding a pink geranium beside the shop's teal door" fetchpriority="high" />
       </section>
 
-      <section class="about-us">
-        <h2><span class="accent">Why</span> She Started</h2>
-        <p>
-          Fran believes flowers should feel personal, generous, and welcoming.
-          That belief shaped every part of the shop, from the hand-tied bouquets
-          to the community partnerships that keep the store rooted in local
-          care.
+      <article class="story">
+        <section aria-labelledby="roots-title">
+          <h2 id="roots-title">Rooted in the Mission</h2>
+          <p>
+            Fran Miller grew up in the Mission District and learned early that a
+            beautiful arrangement can carry comfort, celebration, and hope in a
+            single moment.
+          </p>
+          <p>
+            She opened Fran's Flowers in 1995 to create a warm neighborhood shop
+            where people could find thoughtful blooms for birthdays,
+            anniversaries, and everyday moments of joy.
+          </p>
+        </section>
+
+        <section aria-labelledby="why-title">
+          <h2 id="why-title">Why she started</h2>
+          <p>
+            Fran believes flowers should feel personal, generous, and welcoming.
+            That belief shaped every part of the shop, from the hand-tied bouquets
+            to the community partnerships that keep the store rooted in local
+            care, including the ten percent of every sale that goes to fighting
+            homelessness across the Bay Area.
+          </p>
+          <p>
+            Today the shop still reflects that same spirit, with each arrangement
+            designed to brighten a room and strengthen a connection.
+          </p>
+        </section>
+
+        <p class="story-cta">
+          <a class="button" href="index.html#specials">See this week's specials</a>
         </p>
-        <p>
-          Today, her shop still reflects that same spirit, with each arrangement
-          designed to brighten a room and strengthen a connection.
-        </p>
-      </section>
+      </article>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2025 Fran's Flowers LLC.</p>
-        <p>Brightening lives one flower at a time</p>
-      </div>
+    <footer class="site-footer">
+      <p class="footer-mark">Fran's Flowers</p>
+      <p>Brightening the Mission one flower at a time.</p>
+      <p class="footer-note">
+        Fran's Flowers is a fictional shop from a web-design course brief. Redesign by Sahar Rao;
+        the graded original is kept at the
+        <a href="https://github.com/SRao189/03-LU-site-redesign/tree/submitted-original">submitted-original tag</a>.
+      </p>
     </footer>
   </body>
 </html>
