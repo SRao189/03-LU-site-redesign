@@ -251,12 +251,21 @@ h1 {
   object-fit: cover;
   object-position: 62% 50%;
   border-radius: 999px 999px 0 0;
+}
+
+.hero.is-door-scene .hero-photo picture {
+  border-radius: calc(12px + (1 - var(--door-open, 1)) * 340px) calc(12px + (1 - var(--door-open, 1)) * 340px) 0 0;
+  padding: calc((1 - var(--door-open, 1)) * 10px) calc((1 - var(--door-open, 1)) * 10px) 0;
+}
+
+.hero.is-door-scene .hero-photo img {
+  border-radius: calc(12px + (1 - var(--door-open, 1)) * 340px) calc(12px + (1 - var(--door-open, 1)) * 340px) 0 0;
   clip-path: inset(
-    calc((1 - var(--door-open, 1)) * 10%)
-    calc((1 - var(--door-open, 1)) * 16%)
+    calc((1 - var(--door-open, 1)) * 12%)
+    calc((1 - var(--door-open, 1)) * 18%)
     0
-    calc((1 - var(--door-open, 1)) * 16%)
-    round 999px 999px 0 0
+    calc((1 - var(--door-open, 1)) * 18%)
+    round calc(12px + (1 - var(--door-open, 1)) * 340px) calc(12px + (1 - var(--door-open, 1)) * 340px) 0 0
   );
   transform: scale(calc(1 + (1 - var(--door-open, 1)) * 0.1));
   transform-origin: 50% 85%;
