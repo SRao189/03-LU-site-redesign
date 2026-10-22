@@ -30,6 +30,7 @@
   --z-skip: 10;
   --door-open: 1;
   --tag-swing: 0deg;
+  --threshold-mix: 0;
 
   accent-color: var(--door);
   scrollbar-color: var(--stucco-deep) var(--stucco-light);
@@ -60,7 +61,8 @@ body {
   color: var(--ink);
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -387,20 +389,191 @@ h1 {
   font-weight: 600;
 }
 
-/* Seasonal pick */
+/* Seasonal pick + 2-Shot Threshold Story (Storefront -> Worktable) */
 
 .seasonal {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   align-items: center;
-  gap: clamp(1.5rem, 5vw, 4.5rem);
+  gap: clamp(1.75rem, 4.5vw, 4rem);
   max-width: var(--page);
   margin: 0 auto;
   padding: clamp(3rem, 8vw, 6rem) var(--pad);
 }
 
+.threshold-stage {
+  background: var(--door-deep);
+  color: var(--white);
+  border: 6px solid var(--door);
+  border-radius: 22px;
+  padding: clamp(0.85rem, 2vw, 1.25rem);
+  box-shadow: 0 24px 48px -24px oklch(0.18 0.05 6 / 0.65);
+}
+
+.threshold-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.threshold-kicker {
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--marigold);
+}
+
+.threshold-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+html:not(.js-ready) .threshold-controls {
+  display: none;
+}
+
+.threshold-btn {
+  appearance: none;
+  border: 2px solid oklch(0.99 0.004 6 / 0.28);
+  background: var(--door);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.threshold-btn:hover {
+  border-color: var(--marigold);
+}
+
+.threshold-btn.is-active {
+  background: var(--marigold);
+  border-color: var(--marigold);
+  color: var(--ink);
+}
+
+.threshold-btn--pause {
+  background: transparent;
+}
+
+.threshold-btn:focus-visible {
+  outline-color: var(--marigold);
+}
+
+.threshold-viewport {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+html:not(.js-ready) .threshold-viewport {
+  display: grid;
+  gap: 0.85rem;
+  background: transparent;
+}
+
+.threshold-shot {
+  margin: 0;
+  display: grid;
+}
+
+html.js-ready .seasonal:not(.is-scroll-linked) .threshold-shot--interior {
+  display: none;
+}
+
+html.js-ready .seasonal:not(.is-scroll-linked)[data-active-shot="2"] .threshold-shot--exterior {
+  display: none;
+}
+
+html.js-ready .seasonal:not(.is-scroll-linked)[data-active-shot="2"] .threshold-shot--interior {
+  display: grid;
+}
+
+/* Smooth cross-dissolve when scroll-linked on wide fine-pointer screens */
+.seasonal.is-scroll-linked .threshold-viewport {
+  display: grid;
+}
+
+.seasonal.is-scroll-linked .threshold-shot {
+  grid-area: 1 / 1;
+  display: grid;
+  transition: opacity 0.35s var(--ease-out), transform 0.45s var(--ease-out);
+}
+
+.seasonal.is-scroll-linked .threshold-shot--exterior {
+  opacity: calc(1 - var(--threshold-mix, 0));
+  transform: scale(calc(1 + var(--threshold-mix, 0) * 0.04));
+  pointer-events: auto;
+}
+
+.seasonal.is-scroll-linked .threshold-shot--interior {
+  opacity: var(--threshold-mix, 0);
+  transform: scale(calc(1.04 - var(--threshold-mix, 0) * 0.04));
+  pointer-events: none;
+}
+
+.seasonal.is-scroll-linked[data-active-shot="2"] .threshold-shot--exterior {
+  pointer-events: none;
+}
+
+.seasonal.is-scroll-linked[data-active-shot="2"] .threshold-shot--interior {
+  pointer-events: auto;
+}
+
+.seasonal.is-scroll-linked .threshold-shot--exterior .threshold-caption {
+  opacity: 1;
+}
+
+.seasonal.is-scroll-linked .threshold-shot--interior .threshold-caption {
+  opacity: 0;
+}
+
+.seasonal.is-scroll-linked[data-active-shot="2"] .threshold-shot--exterior .threshold-caption {
+  opacity: 0;
+}
+
+.seasonal.is-scroll-linked[data-active-shot="2"] .threshold-shot--interior .threshold-caption {
+  opacity: 1;
+}
+
+.threshold-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--ink);
+}
+
+.threshold-caption {
+  padding: 0.75rem 0.95rem;
+  background: oklch(0.2 0.04 215 / 0.95);
+  color: var(--white);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.threshold-caption strong {
+  color: var(--marigold);
+}
+
+.seasonal-card {
+  display: grid;
+  gap: 1.35rem;
+  align-items: start;
+}
+
 .seasonal-photo {
   width: 100%;
+  max-width: 15rem;
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
@@ -412,10 +585,18 @@ h1 {
 }
 
 .seasonal-text p {
-  margin: 1.1rem 0 0;
+  margin: 1rem 0 0;
   font-size: 1.1875rem;
   font-weight: 500;
   text-wrap: pretty;
+}
+
+.seasonal-story-note {
+  font-size: 0.95rem !important;
+  padding: 0.65rem 0.9rem;
+  border-left: 4px solid var(--marigold);
+  background: oklch(0.52 0.15 6 / 0.45);
+  border-radius: 0 8px 8px 0;
 }
 
 /* Visit */
@@ -527,7 +708,7 @@ h1 {
 
 .site-footer p {
   margin: 0;
-  max-width: 60ch;
+  max-width: 65ch;
 }
 
 .footer-mark {
@@ -546,9 +727,14 @@ h1 {
   outline-color: var(--marigold);
 }
 
+@media (max-width: 899px) {
+  .seasonal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 760px) {
   .hero,
-  .seasonal,
   .visit {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -562,7 +748,7 @@ h1 {
   }
 
   .seasonal-photo {
-    max-width: 18rem;
+    max-width: 14rem;
   }
 }
 

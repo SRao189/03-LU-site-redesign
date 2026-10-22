@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src https://www.google.com; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'none'; frame-src https://www.google.com; upgrade-insecure-requests" />
     <meta name="description" content="Fran's Flowers: a neighborhood flower shop on Valencia Street in San Francisco's Mission District since 1995. This week's specials, the seasonal pick, and directions." />
     <meta name="theme-color" content="#d24a6c" />
     <title>Fran's Flowers · Valencia Street, San Francisco</title>
@@ -90,15 +90,73 @@
         </ul>
       </section>
 
-      <section class="seasonal" aria-labelledby="seasonal-title">
-        <img class="seasonal-photo" src="img/marigolds.webp" width="400" height="400" alt="" loading="lazy" />
-        <div class="seasonal-text">
-          <h2 id="seasonal-title">Seasonal pick: the Golden Bouquet</h2>
-          <p>
-            Sunflowers, daisies, and seasonal blooms, gathered into one cheerful
-            armful. Made for birthdays, anniversaries, or just
-            because.
-          </p>
+      <section class="seasonal" id="seasonal" aria-labelledby="seasonal-title" data-threshold-scene data-active-shot="1">
+        <div class="threshold-stage" data-threshold-stage>
+          <div class="threshold-header">
+            <span class="threshold-kicker">Through the Teal Door · Valencia St.</span>
+            <div class="threshold-controls" role="group" aria-label="Doorway story shots">
+              <button type="button" class="threshold-btn is-active" data-threshold-shot="1" aria-pressed="true">01 · Storefront</button>
+              <button type="button" class="threshold-btn" data-threshold-shot="2" aria-pressed="false">02 · Worktable</button>
+              <button type="button" class="threshold-btn threshold-btn--pause" data-threshold-toggle aria-pressed="false">Pause motion</button>
+            </div>
+          </div>
+
+          <div class="threshold-viewport">
+            <figure class="threshold-shot threshold-shot--exterior" data-shot-panel="1">
+              <video
+                class="threshold-video"
+                data-threshold-video="1"
+                poster="assets/media/storefront-approach-poster.webp"
+                preload="metadata"
+                muted
+                loop
+                playsinline
+                width="1280"
+                height="720"
+              >
+                <source src="assets/media/storefront-approach-loop.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="threshold-caption">
+                <strong>Shot 01 · Approaching the Teal Storefront.</strong>
+                Pink stucco, terracotta marigold pots, and the nine-pane wooden door propped open on Valencia Street.
+              </figcaption>
+            </figure>
+
+            <figure class="threshold-shot threshold-shot--interior" data-shot-panel="2">
+              <video
+                class="threshold-video"
+                data-threshold-video="2"
+                poster="assets/media/interior-worktable-poster.webp"
+                preload="metadata"
+                muted
+                loop
+                playsinline
+                width="1280"
+                height="720"
+              >
+                <source src="assets/media/interior-worktable-loop.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="threshold-caption">
+                <strong>Shot 02 · Entering Warm Afternoon Light.</strong>
+                Crossing past the weathered teal door frame into afternoon sunbeams, arriving at the Golden Bouquet on the cedar worktable.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="seasonal-card">
+          <img class="seasonal-photo" src="img/marigolds.webp" width="400" height="400" alt="" loading="lazy" />
+          <div class="seasonal-text">
+            <h2 id="seasonal-title">Seasonal pick: the Golden Bouquet</h2>
+            <p>
+              Sunflowers, daisies, and seasonal blooms, gathered into one cheerful
+              armful. Made for birthdays, anniversaries, or just
+              because.
+            </p>
+            <p class="seasonal-story-note">
+              Scroll or switch shots to step from the pink stucco sidewalk through the teal doorway to the worktable arrangement.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -133,9 +191,9 @@
       <p class="footer-mark">Fran's Flowers</p>
       <p>Brightening the Mission one flower at a time.</p>
       <p class="footer-note">
-        Fran's Flowers is a fictional shop from a web-design course brief. Redesign by Sahar Rao;
-        the graded original is kept at the
-        <a href="https://github.com/SRao189/03-LU-site-redesign/tree/submitted-original">submitted-original tag</a>.
+        Fran's Flowers is a fictional shop from a course brief. The graded original is preserved at the
+        <a href="https://github.com/SRao189/03-LU-site-redesign/tree/submitted-original"><code>submitted-original</code></a> tag.
+        This later portfolio revision includes an illustrative two-shot doorway study alongside the original course photography.
       </p>
     </footer>
   </body>

@@ -8,4 +8,4 @@ Live: https://srao189.github.io/03-LU-site-redesign/
 - Fonts (Shrikhand, Figtree; SIL Open Font License) and images are self-hosted, so the Content-Security-Policy allows no outside origins except the Google Maps embed.
 - No build step. Preview with `python -m http.server 8000`.
 
-Fran's Flowers is a fictional business from a web-design course brief ("No AI: CSS Site Redesign"). The graded, no-AI version is preserved at the [`submitted-original`](https://github.com/SRao189/03-LU-site-redesign/tree/submitted-original) tag. This redesign was made afterward, with AI assistance, for Sahar Rao's portfolio. One content fix: the brief's "Ceramic Potted Herbs" photo shows a parlor palm, so the item is now named for what it shows.
+Fran's Flowers is a fictional business from a course brief. The graded original is preserved at the [`submitted-original`](https://github.com/SRao189/03-LU-site-redesign/tree/submitted-original) tag. This later portfolio revision includes an illustrative two-shot doorway study alongside the original course photography. One content fix: the brief's "Ceramic Potted Herbs" photo shows a parlor palm, so the item is now named for what it shows.
